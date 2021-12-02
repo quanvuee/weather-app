@@ -8,7 +8,8 @@ const forecast = (lat,lon,callback) =>{
         } else if(body.error){
             callback('unable to get weather',undefined)
         } else{
-            callback(undefined,"It is currently " + body.current.temperature + " degrees out.")
+            console.log(body.current)
+            callback(undefined,"It is " + body.current.weather_descriptions[0] + " and temperature is " + body.current.temperature + " degrees out.")
         }
     })
 }
